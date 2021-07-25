@@ -73,7 +73,7 @@ function App() {
 
   const marginOfError = Math.abs(rgb.r - randomColor.r) + Math.abs(rgb.g - randomColor.g) + Math.abs(rgb.b - randomColor.b);
 
-  const hasReachedMarginOfError: boolean = marginOfError < 100 && marginOfError % 10 === 0 || marginOfError === 5;
+  const hasReachedMarginOfError: boolean = (marginOfError < 100 && marginOfError % 10 === 0) || marginOfError === 5;
 
   return (
     <div className="ColorGame">
