@@ -49,7 +49,7 @@ function App() {
 
       setRandomColor(getRandomColor());
     }
-  }, [rgb])
+  }, [rgb, randomColor, setRandomColor])
 
   const { r, g, b } = rgb;
 

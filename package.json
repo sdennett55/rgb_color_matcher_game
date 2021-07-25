@@ -1,5 +1,6 @@
 {
   "name": "color_game",
+  "homepage": "https://sdennett55.github.io/rgb_color_matching_game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
