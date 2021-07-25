@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import RightArrow from './RightArrow';
-// import useNoSleep from "use-no-sleep";
 import './App.css';
 
 interface RGBColor {
@@ -41,11 +40,9 @@ function App() {
 
   const [randomColor, setRandomColor] = useState(initialRandomColor);
 
-  // useNoSleep(true);
-
   useEffect(() => {
     if (JSON.stringify(rgb) === JSON.stringify(randomColor)) {
-      alert('you did it!');
+      alert('Congrats! You did it!');
 
       setRandomColor(getRandomColor());
     }
@@ -76,7 +73,7 @@ function App() {
 
   const marginOfError = Math.abs(rgb.r - randomColor.r) + Math.abs(rgb.g - randomColor.g) + Math.abs(rgb.b - randomColor.b);
 
-  const hasReachedMarginOfError: boolean = marginOfError < 100 && marginOfError % 10 === 0;
+  const hasReachedMarginOfError: boolean = marginOfError < 100 && marginOfError % 10 === 0 || marginOfError === 5;
 
   return (
     <div className="ColorGame">
