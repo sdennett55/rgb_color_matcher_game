@@ -1,38 +1,211 @@
-.App {
+:root {
+  --background: #171414;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: #fff;
+}
+
+p {
+  margin: 8px;
+}
+
+.ColorGame {
+  width: 94vw;
+  max-width: 960px;
+  margin: 16px auto 24px;
+}
+.ColorGame-colorOptions {
+  display: flex;
+}
+.ColorGame-button {
+  display: none;
+}
+
+.ColorGame-buttonHalf {
+  flex: 1;
+  background-color: transparent;
+  height: 100%;
+  appearance: none;
+  border: 0;
+  color: #fff;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color: #599bb3;
+	border-radius: 8px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #3d768a;
+  padding: 0;
+}
+
+.ColorGame-buttonHalf:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.ColorGame-buttonHalf:active {
+	position:relative;
+	top:1px;
+}
+
+.ColorGame-label {
+  position: relative;
+  display: flex;
+  flex: 1;
+  padding-bottom: calc(100% / 3 - 10.66px);
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  margin: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.ColorGame-button + .ColorGame-label {
+  margin-right: 16px;
+}
+.ColorGame-label:last-child {
+  margin-right: 0;
+}
+
+.ColorGame-button:checked + .ColorGame-label::after {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23171714' viewBox='0 0 512 512'%3E%3Cpath d='m369.164062 174.769531c7.8125 7.8125 7.8125 20.476563 0 28.285157l-134.171874 134.175781c-7.8125 7.808593-20.472657 7.808593-28.285157 0l-63.871093-63.875c-7.8125-7.808594-7.8125-20.472657 0-28.28125 7.808593-7.8125 20.472656-7.8125 28.28125 0l49.730468 49.730469 120.03125-120.035157c7.8125-7.808593 20.476563-7.808593 28.285156 0zm142.835938 81.230469c0 141.503906-114.515625 256-256 256-141.503906 0-256-114.515625-256-256 0-141.503906 114.515625-256 256-256 141.503906 0 256 114.515625 256 256zm-40 0c0-119.394531-96.621094-216-216-216-119.394531 0-216 96.621094-216 216 0 119.394531 96.621094 216 216 216 119.394531 0 216-96.621094 216-216zm0 0'%3E%3C/path%3E%3C/svg%3E");
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+.ColorGame-buttonWrap {
+  display: flex;
+  height: 50px;
+  margin-top: 16px;
+  columns: 6;
+  gap: 8px;
+}
+.ColorGame-label--red {
+  background: linear-gradient(to bottom, rgba(255, 25, 25, .8) 5%, rgb(255, 25, 25) 100%);
+}
+.ColorGame-label--blue {
+  background: linear-gradient(to bottom, rgba(25, 25, 255, .8) 5%, rgb(25, 25, 255) 100%);
+}
+.ColorGame-label--green {
+  background: linear-gradient(to bottom, rgba(25, 255, 25, .8) 5%, rgb(25, 255, 25) 100%);
+}
+
+.ColorGame-label--red:hover {
+  background: linear-gradient(to bottom, #ff0000 5%, rgba(255, 25, 25, .8) 100%);
+}
+.ColorGame-label--blue:hover {
+  background: linear-gradient(to bottom, rgb(0, 0, 255) 5%, rgba(25, 25, 255, .8) 100%);
+}
+.ColorGame-label--green:hover {
+  background: linear-gradient(to bottom, rgb(0, 255, 0) 5%, rgba(25, 255, 25, .8) 100%);
+}
+
+.ColorGame-title {
+  margin: 8px 0;
+}
+.ColorGame-colorsWrap {
+  position: relative;
+  display: flex;
+  margin-top: 16px;
+}
+
+.ColorGame-text {
+  background: var(--background);
+  padding: 8px;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+}
+
+.ColorGame-centeredText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 32px);
+  padding: 16px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ColorGame-number {
+  width: 30px;
+  display: inline-block;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ColorGame-randomColor,
+.ColorGame-previewColor {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex: 1;
+  padding-bottom: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.ColorGame-hiddenText {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.ColorGame-rightArrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  fill: white;
+  background: var(--background);
+  border-radius: 50%;
+  padding: 12px;
+  /* mix-blend-mode: darken; */
+}
+
+.ColorGame-popupText {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-50%);
+  background: var(--background);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  animation: fadeInThenOut 5s forwards;
+}
+
+@keyframes fadeInThenOut {
+  0% {
+    transform: translate(-50%, 200%);
   }
-  to {
-    transform: rotate(360deg);
+  10% {
+    transform: translate(-50%, 0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
