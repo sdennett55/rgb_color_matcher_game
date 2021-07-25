@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rgb_color_matching_game/static/css/main.86c2236c.chunk.css",
+    "main.js": "/rgb_color_matching_game/static/js/main.1b8c4309.chunk.js",
+    "main.js.map": "/rgb_color_matching_game/static/js/main.1b8c4309.chunk.js.map",
+    "runtime-main.js": "/rgb_color_matching_game/static/js/runtime-main.44f744cd.js",
+    "runtime-main.js.map": "/rgb_color_matching_game/static/js/runtime-main.44f744cd.js.map",
+    "static/js/2.a8cb1416.chunk.js": "/rgb_color_matching_game/static/js/2.a8cb1416.chunk.js",
+    "static/js/2.a8cb1416.chunk.js.map": "/rgb_color_matching_game/static/js/2.a8cb1416.chunk.js.map",
+    "static/js/3.08d3340b.chunk.js": "/rgb_color_matching_game/static/js/3.08d3340b.chunk.js",
+    "static/js/3.08d3340b.chunk.js.map": "/rgb_color_matching_game/static/js/3.08d3340b.chunk.js.map",
+    "index.html": "/rgb_color_matching_game/index.html",
+    "static/css/main.86c2236c.chunk.css.map": "/rgb_color_matching_game/static/css/main.86c2236c.chunk.css.map",
+    "static/js/2.a8cb1416.chunk.js.LICENSE.txt": "/rgb_color_matching_game/static/js/2.a8cb1416.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44f744cd.js",
+    "static/js/2.a8cb1416.chunk.js",
+    "static/css/main.86c2236c.chunk.css",
+    "static/js/main.1b8c4309.chunk.js"
+  ]
+}
